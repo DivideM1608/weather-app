@@ -5,7 +5,7 @@ function Clock({ lat, lon }) {
   
     useEffect(() => {
       const apiKey = '4YKC6O7VC23Z'; // Thay YOUR_API_KEY bằng API key của bạn
-      const apiUrl = `http://api.timezonedb.com/v2.1/get-time-zone?key=${apiKey}&format=json&by=position&lat=${lat}&lng=${lon}`;
+      const apiUrl = `https://api.timezonedb.com/v2.1/get-time-zone?key=${apiKey}&format=json&by=position&lat=${lat}&lng=${lon}`;
   
       fetch(apiUrl)
         .then(response => response.json())
