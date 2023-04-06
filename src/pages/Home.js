@@ -159,28 +159,28 @@ function Home() {
 
                     <div className='map-weather'>
                       <div className='map'>
-                        <div class='map-inner'>
+                        <div className='map-inner'>
                           <Map lat={location.latitude} lon={location.longitude}/>
                         </div>
                       </div>
                       <div className="hours-weather">
                         <div className='hours-weather-inner'>
                           <p>Weather for the next 7 hours</p>
-                          <div class="table">
-                            <div class="row">
-                              <div class="cell">Time</div>
-                              <div class="cell">Weather</div>
-                              <div class="cell">Tempperature</div>
+                          <div className="table">
+                            <div className="row">
+                              <div className="cell">Time</div>
+                              <div className="cell">Weather</div>
+                              <div className="cell">Tempperature</div>
                             </div>
                             {futureTimes.map((item, index) => (
-                            <div class="row">
-                              <div class="cell">{moment(item).format("DD/MM/YYYY HH:mm")}</div>
-                              <div class="cell">
+                            <div className="row" key={index}>
+                              <div className="cell">{moment(item).format("DD/MM/YYYY HH:mm")}</div>
+                              <div className="cell">
                                 <div>
                                   <img className='weather-icon' src={require(`./icons/${ICON_MAP.get(nextThreeWeatherCodes[index])}.svg`)} />
                                 </div>
                               </div>
-                              <div class="cell">{nextThreeTemp[index]}</div>
+                              <div className="cell">{nextThreeTemp[index]}</div>
                             </div>
                             ))}
                           </div>
@@ -191,24 +191,26 @@ function Home() {
                   <div className='table-days'>
                     <p>Weather for the next 7 days</p>
                     <table>
-                      <tr>
-                        <td>Date</td>
-                        <td>Weather</td>
-                        <td>High</td>
-                        <td>Low</td>
-                      </tr>
-                      {data.daily.time.map((item, index) => (
-                      <tr>
-                        <td>{item}</td>
-                        <td>
-                          <div className='days-weather-icon'>
-                            <img className='weather-icon' src={require(`./icons/${ICON_MAP.get(data.daily.weathercode[index])}.svg`)} />
-                          </div>
-                        </td>
-                        <td>{data.daily.temperature_2m_max[index]}</td>
-                        <td>{data.daily.temperature_2m_min[index]}</td>
-                      </tr>
-                      ))}
+                      <tbody>
+                        <tr>
+                          <td>Date</td>
+                          <td>Weather</td>
+                          <td>High</td>
+                          <td>Low</td>
+                        </tr>
+                        {data.daily.time.map((item, index) => (
+                        <tr key={index}>
+                          <td>{item}</td>
+                          <td>
+                            <div className='days-weather-icon'>
+                              <img className='weather-icon' src={require(`./icons/${ICON_MAP.get(data.daily.weathercode[index])}.svg`)} />
+                            </div>
+                          </td>
+                          <td>{data.daily.temperature_2m_max[index]}</td>
+                          <td>{data.daily.temperature_2m_min[index]}</td>
+                        </tr>
+                        ))}
+                      </tbody>
                     </table>
                   </div>
                 </div>  
