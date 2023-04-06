@@ -1,0 +1,144 @@
+@import url("~leaflet/dist/leaflet.css");
+
+.leaflet-container {
+  width: 100%;
+  height: 50vh;
+}
+
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+body {
+  margin: 0;
+  background-color: rgb(17, 28, 32);
+  color: white;
+  font-family: sans-serif;
+  position: relative;
+}
+
+.weather-icon {
+  width: 30px;
+  height: 30px;
+}
+
+.row-page {
+  margin: auto;
+  max-width: 62.5rem;
+  width: 100%;
+}
+
+.map {
+  display: inline-block;
+  width: 50%;
+  position: relative;
+}
+.map-inner {
+  margin: 5px;
+}
+.hours-weather {
+  position: relative;
+  display: inline-block;
+  width: 50%;
+  vertical-align: top;
+}
+.hours-weather-inner {
+  margin: 5px;
+}
+.hours-weather-tittle {
+  position: relative;
+  display: relative;
+  display: block;
+}
+
+.table-days {
+  width: 100%;
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+  overflow: auto;
+  background-color: white;
+  color: black
+}
+
+td {
+  border: 1px solid black;
+  padding: 10px;
+}
+
+.table {
+  display: table;
+  width: 100%;
+  background-color: white;
+  color: black;
+}
+
+.row {
+  display: table-row;
+}
+
+.cell {
+  display: table-cell;
+  border: 1px solid #ddd;
+  padding: 8px;
+  align-items: center;
+}
+
+@media only screen and (max-width: 768px) {
+  .row-page {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 100%;
+  }
+  .map-weather {
+    width: 100%;
+  }
+  .map {
+    width: 100%;  
+  }
+  .hours-weather {
+    width: 100%;
+  }
+  .hours-weather-inner {
+
+  }
+
+}
